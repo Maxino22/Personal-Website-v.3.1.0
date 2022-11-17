@@ -19,10 +19,10 @@
 	.code {
 		@apply text-sm;
 	}
+}
 
-	a.active {
-		@apply text-white;
-	}
+nav div#nav a.active {
+	@apply text-accentOrange border-b border-b-accentOrange;
 }
 
 /* Hambuger Menu */

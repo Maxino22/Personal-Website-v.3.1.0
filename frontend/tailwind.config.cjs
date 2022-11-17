@@ -15,6 +15,7 @@ module.exports = {
 				secondaryPurple: '#4D5BCE',
 				accentOrange: '#FEA55F',
 				accentGreen: '#43D9AD',
+				accentBlue: '#4D5BCE',
 				accentCream: '#E99287',
 				accentPink: '#C98BDF',
 				lines: '#1E2D3D',

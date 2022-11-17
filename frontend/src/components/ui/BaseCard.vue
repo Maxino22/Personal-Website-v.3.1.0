@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="container m-auto bg-primaryBlue border border-lines rounded-lg h-full"
+		class="container bg-primaryBlue border border-lines my-4 mx-auto rounded-lg overflow-x-hidden"
 	>
 		<the-header></the-header>
 		<slot></slot>

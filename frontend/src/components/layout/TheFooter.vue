@@ -39,29 +39,38 @@
 				find me in:
 			</p>
 
-			<a href="" class="px-4 border-r text-secondaryLightBlue border-lines">
-				<img
-					src="../../assets/icon-instagram.svg"
-					class="text-secondaryLightBlue"
-					alt=""
-				/>
+			<a
+				target="_blank"
+				href="https://www.linkedin.com/in/maxwell-muhanda-5563b316b/"
+				class="px-4 border-r text-secondaryLightBlue border-lines"
+			>
+				<iconLinkedIn />
 			</a>
-			<a href="" class="px-4 border-r text-secondaryLightBlue border-lines">
-				<img
-					src="../../assets/icon-twitter.svg"
-					class="text-secondaryLightBlue"
-					alt=""
-				/>
+			<a
+				target="_blank"
+				href="https://twitter.com/MaxwellMuhanda"
+				class="px-4 border-r text-secondaryLightBlue border-lines"
+			>
+				<icon-twitter></icon-twitter>
 			</a>
 		</div>
 		<div>
 			<a
-				href=""
+				target="_blank"
+				href="https://github.com/Maxino22"
 				class="flex items-center space-x-1 px-4 border-l border-lines text-center"
 			>
-				<span class="text-secondaryLightBlue">@maxino22</span>
-				<img src="../../assets/icon-github.svg" alt="" />
+				<span class="text-secondaryLightBlue hover:text-accentOrange"
+					>Maxino22</span
+				>
+				<IconGithub />
 			</a>
 		</div>
 	</footer>
 </template>
+
+<script setup>
+import IconGithub from '../icons/iconGithub.vue'
+import iconLinkedIn from '../icons/iconLinkedIn.vue'
+import IconTwitter from '../icons/iconTwitter.vue'
+</script>
