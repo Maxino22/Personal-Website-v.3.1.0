@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="grid grid-col-1 mx-auto min-h-screen md:grid-cols-3 xl:grid-cols-5"
+		class="grid grid-col-1 mx-auto pb-10 md:min-h-screen md:grid-cols-3 xl:grid-cols-5"
 	>
 		<div
 			class="md:pr-12 flex flex-col w-full justify-start md:border-r border-lines"

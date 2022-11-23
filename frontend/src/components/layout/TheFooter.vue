@@ -6,26 +6,23 @@
 			find me in:
 		</div>
 		<div class="flex items-center">
-			<a href="" class="px-4 border-r text-secondaryLightBlue border-lines">
-				<img
-					src="../../assets/icon-instagram.svg"
-					class="text-secondaryLightBlue"
-					alt=""
-				/>
+			<a
+				href="https://www.linkedin.com/in/maxwell-muhanda-5563b316b/"
+				class="px-4 border-r text-secondaryLightBlue border-lines"
+			>
+				<iconLinkedIn />
 			</a>
-			<a href="" class="px-4 border-r text-secondaryLightBlue border-lines">
-				<img
-					src="../../assets/icon-twitter.svg"
-					class="text-secondaryLightBlue"
-					alt=""
-				/>
+			<a
+				href="https://twitter.com/MaxwellMuhanda"
+				class="px-4 border-r text-secondaryLightBlue border-lines"
+			>
+				<icon-twitter></icon-twitter>
 			</a>
-			<a href="" class="px-4 text-secondaryLightBlue">
-				<img
-					src="../../assets/icon-github.svg"
-					class="text-secondaryLightBlue"
-					alt=""
-				/>
+			<a
+				href="https://github.com/Maxino22"
+				class="px-4 text-secondaryLightBlue"
+			>
+				<IconGithub />
 			</a>
 		</div>
 	</footer>
