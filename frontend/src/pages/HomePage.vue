@@ -5,9 +5,11 @@
 		<div class="flex flex-col space-y-4">
 			<h6 class="sub-head text-white">Hi all. I am</h6>
 			<h1 class="heading text-white">Maxwell Muhanda</h1>
+
 			<h4 class="sub-head text-accentGreen md:text-secondaryPurple">
-				> Full-Stack Developer
+				> <span class="typing"></span>
 			</h4>
+
 			<div>
 				<p class="hidden lg:block mt-10 body-text text-secondaryLightBlue">
 					// play snake Game
@@ -30,10 +32,6 @@
 	</div>
 </template>
 
-<script>
-import SnakeGame from '../components/ui/SnakeGame.vue'
-export default {
-	components: { SnakeGame },
-	setup() {},
-}
+<script setup>
+import SnakeGame from '../components/ui/snake-game/SnakeGame.vue'
 </script>

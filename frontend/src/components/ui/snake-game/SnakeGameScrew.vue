@@ -14,5 +14,5 @@
 </template>
 
 <script setup>
-import IconSnakeScrew from '../icons/IconSnakeScrew.vue'
+import IconSnakeScrew from '../../icons/IconSnakeScrew.vue'
 </script>
