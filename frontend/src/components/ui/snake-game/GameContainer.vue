@@ -2,31 +2,49 @@
 	<div class="text-center">
 		<canvas
 			ref="gameBoard"
-			height="600"
-			width="300"
+			height="700"
+			width="400"
 			class="w-full border rounded-lg border-black"
 		>
 		</canvas>
+		<button
+			class="start-button"
+			@click="gameStart"
+			v-if="!running && !gameOver"
+		>
+			Start-game
+		</button>
+		<button
+			class="restart-button text-sm"
+			@click="restGame"
+			v-if="gameOver && !running"
+		>
+			Restart-game
+		</button>
 	</div>
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref } from 'vue'
+import useSnakeStore from '../../../store/snakeStore'
+
+const snakeStore = useSnakeStore()
 
 const gameBoard = ref(null)
 const ctx = ref(null)
 const gameWidth = ref(0)
 const gameHeight = ref(0)
 const boardBackground = ref('#011627')
-const snakeColor = ref('43D9AD')
+const snakeColor = ref('#43D9AD')
 const foodColor = ref('#43D9AD')
 const unitSize = ref(25)
 const running = ref(false)
+const gameOver = ref(false)
 const xVelocity = ref(unitSize.value)
 const yVelocity = ref(0)
 const foodX = ref('')
 const foodY = ref('')
-const score = ref(0)
+
 const snake = ref([
 	{ x: unitSize.value * 4, y: 0 },
 	{ x: unitSize.value * 3, y: 0 },
@@ -39,8 +57,8 @@ onMounted(() => {
 	ctx.value = gameBoard.value.getContext('2d')
 	gameWidth.value = gameBoard.value.getAttribute('width')
 	gameHeight.value = gameBoard.value.getAttribute('height')
+	clearBoard()
 	window.addEventListener('keydown', changeDirection)
-	gameStart()
 
 	// createFood()
 	// drawFood()
@@ -48,6 +66,7 @@ onMounted(() => {
 
 function gameStart() {
 	running.value = true
+	gameOver.value = false
 	createFood()
 	drawFood()
 	nextTick()
@@ -63,7 +82,7 @@ function nextTick() {
 			drawSnake()
 			// checkGameOVer()
 			nextTick()
-		}, 75)
+		}, 100)
 	}
 }
 
@@ -102,6 +121,8 @@ function moveSnake() {
 		head.y > gameHeight.value
 	) {
 		running.value = false
+		gameOver.value = true
+		displayGameOVer()
 		// gameOver()
 		// return
 	}
@@ -110,6 +131,8 @@ function moveSnake() {
 	for (let i = 1; i < snake.value.length; i++) {
 		if (head.x === snake.value[i].x && head.y === snake.value[i].y) {
 			running.value = false
+			gameOver.value = true
+			displayGameOVer()
 			return
 		}
 	}
@@ -117,7 +140,7 @@ function moveSnake() {
 	snake.value.unshift(head)
 	// food is  iten
 	if (snake.value[0].x == foodX.value && snake.value[0].y == foodY.value) {
-		score.value += 1
+		snakeStore.addScore()
 		createFood()
 	} else {
 		snake.value.pop()
@@ -163,32 +186,60 @@ function changeDirection(event) {
 	}
 }
 
-// function checkGameOVer() {
-// 	switch (true) {
-// 		case snake.value[0].x < 0:
-// 			running.value = false
-// 			break
-// 		case snake.value[0].x >= gameWidth.value:
-// 			running.value = false
-// 			break
-// 		case snake.value[0].y < 0:
-// 			running.value = false
-// 			break
-// 		case snake.value[0].y >= gameHeight.value:
-// 			running.value = false
-// 			break
-// 	}
-// 	for (let i = 1; i < snake.value.length; i += 1) {
-// 		if (
-// 			snake.value[i].x == snake.value[0].x &&
-// 			snake.value[i].y == snake.value[0].y
-// 		) {
-// 			running.value = false
-// 		}
-// 	}
-// }
-function displayGameOVer() {}
-function restGame() {}
+function displayGameOVer() {
+	ctx.value.font = '30px MV Boli'
+	ctx.value.fillStyle = '#43D9AD'
+	ctx.value.textAligh = 'left'
+	ctx.value.fillText('GAME OVER!!', gameWidth.value / 4.5, gameHeight.value / 2)
+	running.value = false
+}
+function restGame() {
+	snakeStore.reset()
+	xVelocity.value = unitSize.value
+	yVelocity.value = 0
+	snake.value = [
+		{ x: unitSize.value * 4, y: 0 },
+		{ x: unitSize.value * 3, y: 0 },
+		{ x: unitSize.value * 2, y: 0 },
+		{ x: unitSize.value, y: 0 },
+		{ x: 0, y: 0 },
+	]
+	gameStart()
+}
 
 // window.addEventListener('keydown', changeDirection)
 </script>
+
+<style scoped>
+.text-center {
+	position: relative;
+}
+.start-button {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	padding: 5px 10px;
+	transform: translateX(-50%);
+	background-color: #fea55f;
+	color: #01080e;
+	border-radius: 0.5em;
+	border: none;
+}
+.start-button:hover {
+	color: #01080e;
+}
+.restart-button {
+	position: absolute;
+	bottom: 1rem;
+	padding: 5px 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #fff;
+	background-color: #1c2b3a;
+	border-radius: 0.5em;
+	border: none;
+}
+.restart-button:hover {
+	color: #fea55f;
+}
+</style>
