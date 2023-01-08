@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="container bg-primaryBlue border border-lines my-4 mx-auto rounded-lg overflow-x-hidden"
+		class="container bg-primaryBlue border border-lines mx-auto rounded-lg overflow-x-hidden"
 	>
 		<the-header></the-header>
 		<slot></slot>
@@ -8,11 +8,7 @@
 	</div>
 </template>
 
-<script>
+<script setup>
 import TheHeader from '../layout/TheHeader.vue'
 import TheFooter from '../layout/TheFooter.vue'
-export default {
-	components: { TheHeader, TheFooter },
-	setup() {},
-}
 </script>

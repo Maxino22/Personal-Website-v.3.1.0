@@ -45,6 +45,9 @@
 
 <script setup>
 const props = defineProps({
-	score: Number,
+	score: {
+		type: Number,
+		required: true,
+	},
 })
 </script>

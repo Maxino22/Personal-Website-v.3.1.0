@@ -59,16 +59,11 @@
 	</nav>
 </template>
 
-<script>
+<script setup>
 import { ref } from '@vue/reactivity'
-export default {
-	setup() {
-		const isActive = ref(false)
-		function openButton() {
-			isActive.value = !isActive.value
-		}
 
-		return { openButton, isActive }
-	},
+const isActive = ref(false)
+function openButton() {
+	isActive.value = !isActive.value
 }
 </script>

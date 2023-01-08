@@ -4,15 +4,15 @@
 			<button
 				@click="openAccordion"
 				type="button"
-				class="flex items-center space-x-3 justify-between w-full p-5 font-medium text-left text-white"
+				class="flex items-center pl-6 py-3 md:py-0 mt-3 border-b border-b-lines bg-lines md:bg-inherit space-x-3 w-full font-medium text-left text-white"
 			>
-				<span :class="classObject">projects</span>
 				<div class="transition duration-500 ease" :class="arrowClick">
 					<iconUpArrow />
 				</div>
+				<span :class="classObject">projects</span>
 			</button>
 		</h2>
-		<div class="flex flex-col items-start pl-8" v-if="active">
+		<div class="flex flex-col items-start pl-8 mt-5" v-if="active">
 			<div class="flex space-x-2 items-center mb-4">
 				<input
 					type="checkbox"
@@ -83,7 +83,7 @@ function openAccordion() {
 }
 
 const classObject = computed(() => ({
-	'text-accentGreen': active.value,
+	'text-white': active.value,
 }))
 const arrowClick = computed(() => ({
 	'-rotate-180': active.value,

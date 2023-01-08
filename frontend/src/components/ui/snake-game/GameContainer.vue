@@ -26,9 +26,6 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import useSnakeStore from '../../../store/snakeStore'
-
-const snakeStore = useSnakeStore()
 
 const gameBoard = ref(null)
 const ctx = ref(null)
@@ -36,6 +33,7 @@ const gameWidth = ref(0)
 const gameHeight = ref(0)
 const boardBackground = ref('#011627')
 const snakeColor = ref('#43D9AD')
+const score = ref(0)
 const foodColor = ref('#43D9AD')
 const unitSize = ref(25)
 const running = ref(false)
@@ -52,6 +50,8 @@ const snake = ref([
 	{ x: unitSize.value, y: 0 },
 	{ x: 0, y: 0 },
 ])
+
+const emit = defineEmits(['update:score'])
 
 onMounted(() => {
 	ctx.value = gameBoard.value.getContext('2d')
@@ -140,7 +140,8 @@ function moveSnake() {
 	snake.value.unshift(head)
 	// food is  iten
 	if (snake.value[0].x == foodX.value && snake.value[0].y == foodY.value) {
-		snakeStore.addScore()
+		score.value++
+		emit('update:score', score.value)
 		createFood()
 	} else {
 		snake.value.pop()
@@ -194,7 +195,8 @@ function displayGameOVer() {
 	running.value = false
 }
 function restGame() {
-	snakeStore.reset()
+	score.value = 0
+	emit('update:score', score.value)
 	xVelocity.value = unitSize.value
 	yVelocity.value = 0
 	snake.value = [

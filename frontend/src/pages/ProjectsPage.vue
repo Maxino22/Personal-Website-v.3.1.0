@@ -6,7 +6,7 @@
 			<p class="pt-6 px-6 outline-none group text-white body-text md:hidden">
 				_projects
 			</p>
-			<div class="flex flex-col">
+			<div class="flex flex-col w-full">
 				<ProjectsTab />
 			</div>
 		</div>

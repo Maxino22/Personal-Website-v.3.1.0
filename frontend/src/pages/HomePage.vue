@@ -1,15 +1,12 @@
 <template>
 	<div
-		class="flex flex-col justify-start md:flex-row md:space-x-24 min-h-screen px-12 py-24 md:pt-64 md:pb-32"
+		class="flex flex-col justify-start md:flex-row md:space-x-24 min-h-screen px-12"
 	>
-		<div class="flex flex-col space-y-4">
+		<div class="flex flex-col space-y-4 mt-40">
 			<h6 class="sub-head text-white">Hi all. I am</h6>
-			<h1 class="heading text-white">Maxwell Muhanda</h1>
+			<h3 class="heading text-white">Maxwell Muhanda</h3>
 
-			<h4 class="sub-head text-accentGreen md:text-secondaryPurple">
-				> <span class="typing"></span>
-			</h4>
-
+			<TheTypeWritter />
 			<div>
 				<p class="hidden lg:block mt-10 body-text text-secondaryLightBlue">
 					// play snake Game
@@ -28,10 +25,12 @@
 				</p>
 			</div>
 		</div>
+
 		<snake-game></snake-game>
 	</div>
 </template>
 
 <script setup>
+import TheTypeWritter from '../components/layout/TheTypeWritter.vue'
 import SnakeGame from '../components/ui/snake-game/SnakeGame.vue'
 </script>

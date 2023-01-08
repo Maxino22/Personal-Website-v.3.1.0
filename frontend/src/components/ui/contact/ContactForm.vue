@@ -1,6 +1,9 @@
 <template>
-	<div class="flex md:py-64 justify-center">
-		<form @submit.prevent="submitForm" class="flex flex-col space-y-8 w-96">
+	<div class="flex md:py-28 justify-center mx-10">
+		<form
+			@submit.prevent="submitForm"
+			class="flex flex-col space-y-8 w-full md:w-96"
+		>
 			<div>
 				<label
 					for="name"

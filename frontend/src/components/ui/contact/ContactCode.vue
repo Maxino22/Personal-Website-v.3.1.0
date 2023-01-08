@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col md:py-64 px-2">
+	<div class="flex flex-col md:py-28 px-2">
 		<div class="flex items-center space-x-4">
 			<span class="text-secondaryLightBlue">1</span>
 			<p class="flex space-x-2">
