@@ -18,6 +18,8 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.18",
     "tailwindcss": "^3.2.2",
-    "vite": "^3.2.3"
+    "vite": "^3.2.3",
+    "vite-plugin-pages": "^0.28.0",
+    "vite-plugin-pages-sitemap": "^1.4.5"
   }
 }
