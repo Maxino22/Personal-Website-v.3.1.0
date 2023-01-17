@@ -63,7 +63,9 @@
 import { ref } from '@vue/reactivity'
 
 const isActive = ref(false)
+const emit = defineEmits(['openMobileMenu'])
 function openButton() {
 	isActive.value = !isActive.value
+	emit('openMobileMenu')
 }
 </script>
