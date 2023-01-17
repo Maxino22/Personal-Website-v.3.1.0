@@ -12,8 +12,28 @@
 </template>
 
 <script setup>
-function openHome() {}
-function openAbout() {}
-function openProjects() {}
-function openContacts() {}
+import { useRouter } from 'vue-router'
+import useMobileMenu from '../../store/mobileMenu'
+const mobileMenu = useMobileMenu()
+const router = useRouter()
+function openHome() {
+	router.push('/')
+	mobileMenu.openMobileButton()
+	mobileMenu.openMobileMenu()
+}
+function openAbout() {
+	router.push('/about-me')
+	mobileMenu.openMobileButton()
+	mobileMenu.openMobileMenu()
+}
+function openProjects() {
+	router.push('/projects')
+	mobileMenu.openMobileButton()
+	mobileMenu.openMobileMenu()
+}
+function openContacts() {
+	router.push('/contact-me')
+	mobileMenu.openMobileButton()
+	mobileMenu.openMobileMenu()
+}
 </script>

@@ -10,7 +10,7 @@
 				<div class="transition duration-500 ease" :class="arrowClick">
 					<iconUpArrow />
 				</div>
-				<span :class="classObject">personal-info</span>
+				<span>personal-info</span>
 			</button>
 		</h2>
 		<!-- personal-body -->
@@ -77,7 +77,7 @@
 				<div class="transition duration-500 ease">
 					<iconLeftArrow />
 				</div>
-				<span :class="classObject">Contacts</span>
+				<span>Contacts</span>
 			</button>
 		</h2>
 		<!-- contact-body -->

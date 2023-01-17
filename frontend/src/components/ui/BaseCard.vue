@@ -13,11 +13,13 @@
 import TheHeader from '../layout/TheHeader.vue'
 import TheFooter from '../layout/TheFooter.vue'
 import TheMobileMenu from '../layout/TheMobileMenu.vue'
-import { ref } from 'vue'
+import useMobileMenu from '../../store/mobileMenu'
 
-const showMobileMenu = ref(false)
+import { ref, computed } from 'vue'
+const mobileStore = useMobileMenu()
+const showMobileMenu = computed(() => mobileStore.isActive)
 
 function DisplayMobileMenu() {
-	showMobileMenu.value = !showMobileMenu.value
+	mobileStore.openMobileMenu()
 }
 </script>

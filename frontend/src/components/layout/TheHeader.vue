@@ -60,12 +60,16 @@
 </template>
 
 <script setup>
-import { ref } from '@vue/reactivity'
+import { ref, computed } from '@vue/reactivity'
+import useMobileMenu from '../../store/mobileMenu'
 
-const isActive = ref(false)
+const mobileMenu = useMobileMenu()
+
+const isActive = computed(() => mobileMenu.isOpenButton)
+
 const emit = defineEmits(['openMobileMenu'])
 function openButton() {
-	isActive.value = !isActive.value
+	mobileMenu.openMobileButton()
 	emit('openMobileMenu')
 }
 </script>
