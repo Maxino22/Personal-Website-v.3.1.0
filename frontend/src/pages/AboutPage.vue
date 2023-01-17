@@ -11,6 +11,11 @@
 			</div>
 		</div>
 		<div class="md:col-span-4 py-3">
+			<div class="grid grid-col-1 lg:grid-col-2 divide-y divide-lines">
+				<!--  -->
+				<div class="col-span-2 md:border-r border-lines"></div>
+				<div class="col-span-2 md:border-r border-lines"></div>
+			</div>
 			<div class="flex w-full items-center md:border-b border-lines">
 				<div class="px-10 text-white">
 					// Projects <span class="text-secondaryLightBlue">/ all</span>
