@@ -10,20 +10,17 @@
 				<AboutSideTab />
 			</div>
 		</div>
-		<div class="md:col-span-4 py-3">
-			<div class="grid grid-col-1 lg:grid-col-2 divide-y divide-lines">
-				<!--  -->
-				<div class="col-span-2 md:border-r border-lines"></div>
-				<div class="col-span-2 md:border-r border-lines"></div>
-			</div>
-			<div class="flex w-full items-center md:border-b border-lines">
-				<div class="px-10 text-white">
-					// Projects <span class="text-secondaryLightBlue">/ all</span>
-				</div>
-			</div>
-			<div
-				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 items-center md:mt-24 mx-16"
-			></div>
+		<div class="col-span-2 md:border-r border-lines">
+			<p
+				class="text-secondaryLightBlue border-b w-full pl-5 border-lines py-[6px]"
+			>
+				Text
+			</p>
+		</div>
+		<div class="hidden lg:block lg:col-span-2">
+			<p class="text-primaryBlue border-b w-full pl-5 border-lines py-[6px]">
+				test
+			</p>
 		</div>
 	</div>
 </template>

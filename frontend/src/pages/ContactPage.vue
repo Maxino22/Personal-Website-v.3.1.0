@@ -18,7 +18,7 @@
 			<contactSubmitted v-if="contactStore.messageRecieved" />
 			<ContactForm v-else />
 		</div>
-		<div class="hidden xl:flex lg:col-span-2">
+		<div class="hidden lg:block lg:col-span-2">
 			<ContactCode
 				:name="contactStore.userName"
 				:email="contactStore.userEmail"
