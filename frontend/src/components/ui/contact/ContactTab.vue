@@ -1,14 +1,15 @@
 <template>
 	<!-- Tab 1 -->
-	<div class="py-3 px-6 outline-none group divide-y divide-lines" tabindex="1">
+	<div class="py-3 px-6 outline-none group divide-y divide-lines">
 		<!-- Tab Flex Container -->
 		<div
+			@click="openAccordion"
 			class="flex items-center justify-start py-3 space-x-2 text-white transition duration-500 cursor-pointer group ease"
 		>
 			<div
 				class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-accentGreen"
 			>
-				<IconUpArrow />
+				<IconUpArrow :class="arrowClick" />
 			</div>
 			<!-- tab Title -->
 			<div class="transistion duration-500 ease group-hover:text-accentGreen">
@@ -18,6 +19,7 @@
 		</div>
 		<!-- Tab Inner Content -->
 		<div
+			v-if="active"
 			class="flex flex-col overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
 		>
 			<div class="flex flex-row space-x-2">
@@ -27,7 +29,7 @@
 		</div>
 	</div>
 	<!-- Tab 2 -->
-	<div class="py-3 px-6 outline-none group" tabindex="2">
+	<div class="py-3 px-6 outline-none group">
 		<!-- Tab Flex Container -->
 		<div
 			class="flex items-center justify-start py-3 space-x-2 text-white transition duration-500 cursor-pointer group ease"
@@ -35,7 +37,7 @@
 			<div
 				class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-accentGreen"
 			>
-				<IconUpArrow />
+				<IconUpArrow :class="arrowClick" />
 			</div>
 			<!-- tab Title -->
 			<div class="transistion duration-500 ease group-hover:text-accentGreen">
@@ -92,7 +94,19 @@
 </template>
 
 <script setup>
+import { computed } from '@vue/reactivity'
 import IconMail from '../../icons/iconMail.vue'
 import IconUpArrow from '../../icons/iconUpArrow.vue'
 import IconLinkExternal from '../../icons/iconLinkExternal.vue'
+import { ref } from 'vue'
+
+const active = ref(false)
+
+function openAccordion() {
+	active.value = !active.value
+}
+
+const arrowClick = computed(() => ({
+	'-rotate-180': active.value,
+}))
 </script>
