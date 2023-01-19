@@ -16,6 +16,9 @@
 			>
 				Text
 			</p>
+			<AboutBio v-if="BioVue" />
+			<AboutTechStacks v-if="TechVue" />
+			<AboutArsenal v-if="ArsenalVue" />
 		</div>
 		<div class="lg:col-span-2">
 			<p class="text-primaryBlue border-b w-full pl-5 border-lines py-[6px]">
@@ -27,6 +30,14 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import AboutArsenal from '../components/ui/about/AboutArsenal.vue'
+import AboutBio from '../components/ui/about/AboutBio.vue'
 import AboutCodeSnippet from '../components/ui/about/AboutCodeSnippet.vue'
 import AboutSideTab from '../components/ui/about/AboutSideTab.vue'
+import AboutTechStacks from '../components/ui/about/AboutTechStacks.vue'
+
+const BioVue = ref(true)
+const TechVue = ref(false)
+const ArsenalVue = ref(false)
 </script>
