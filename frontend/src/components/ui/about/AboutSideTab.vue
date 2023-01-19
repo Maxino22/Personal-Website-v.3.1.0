@@ -1,5 +1,5 @@
 <template>
-	<div id="accordion-collapse" data-accordion="collapse">
+	<div>
 		<!-- personal info -->
 		<h2 id="accordion-collapse-heading-1">
 			<button
@@ -16,6 +16,7 @@
 		<!-- personal-body -->
 		<div class="flex flex-col items-start pl-8 mt-5" v-if="personInfoActive">
 			<div
+				@click="toggleBio"
 				class="flex space-x-3 items-center cursor-pointer mb-4 text-gray-200"
 			>
 				<div class="transition duration-500 ease">
@@ -25,6 +26,7 @@
 				<p class="ml-2 text-body font-mediumtext-gray-300">bio</p>
 			</div>
 			<div
+				@click="toggleTech"
 				class="flex space-x-3 items-center cursor-pointer mb-4 text-gray-200"
 			>
 				<div class="transition duration-500 ease">
@@ -87,14 +89,9 @@
 			>
 				<div class="transition duration-500 ease"></div>
 				<iconMail />
-				<p class="ml-2 text-body font-mediumtext-gray-300">bio</p>
-			</div>
-			<div
-				class="flex space-x-3 items-center cursor-pointer mb-4 text-gray-200"
-			>
-				<div class="transition duration-500 ease"></div>
-				<iconPhone />
-				<p class="ml-2 text-body font-mediumtext-gray-300">Tech Stacks</p>
+				<p class="ml-2 text-body font-mediumtext-gray-300">
+					ajaybullec@gmail.com
+				</p>
 			</div>
 		</div>
 	</div>
@@ -111,11 +108,19 @@ const personInfoActive = ref(false)
 const contactsActive = ref(false)
 const moreAboutActive = ref(false)
 
+const emit = defineEmits(['activateBio', 'activateTech', 'activateMore'])
 function togglePersonalInfo() {
 	personInfoActive.value = !personInfoActive.value
 }
+function toggleBio() {
+	emit('activateBio')
+}
+function toggleTech() {
+	emit('activateTech')
+}
 function toggleMoreInfo() {
 	moreAboutActive.value = !moreAboutActive.value
+	emit('activateMore')
 }
 function toggleContacts() {
 	contactsActive.value = !contactsActive.value

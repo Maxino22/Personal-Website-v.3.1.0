@@ -1,4 +1,28 @@
 <template>
+	<!-- personal info -->
+	<h2 id="accordion-collapse-heading-1">
+		<button
+			@click="togglePersonalInfo"
+			type="button"
+			class="flex items-center pl-6 py-3 md:py-0 mt-3 border-b border-b-lines bg-lines md:bg-inherit space-x-3 w-full font-medium text-left text-white"
+		>
+			<div class="transition duration-500 ease" :class="arrowClick">
+				<iconUpArrow />
+			</div>
+			<span>personal-info</span>
+		</button>
+	</h2>
+	<!-- contact-body -->
+	<div class="flex flex-col items-start pl-8 mt-5" v-if="contactsActive">
+		<div class="flex space-x-3 items-center cursor-pointer mb-4 text-gray-200">
+			<div class="transition duration-500 ease"></div>
+			<iconMail />
+			<p class="ml-2 text-body font-mediumtext-gray-300">
+				ajaybullec@gmail.com
+			</p>
+		</div>
+	</div>
+
 	<!-- Tab 1 -->
 	<div class="py-3 px-6 outline-none group divide-y divide-lines">
 		<!-- Tab Flex Container -->
