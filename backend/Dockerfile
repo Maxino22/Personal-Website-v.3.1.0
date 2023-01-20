@@ -5,13 +5,17 @@ FROM python:3.11.0a3-alpine3.15
 WORKDIR /app
 
 # sh# app dependancies
-# COPY linux.sh ./
-# RUN chmod +x linux.
-RUN ["pip" ,"install" ,"--upgrade", "pip"]
+# application server dependancies
+RUN apk update \
+     && apk add bash postgresql-dev libffi-dev gcc python3-dev musl-dev  jpeg-dev zlib-dev
+RUN pip install --upgrade pip 
 
-COPY requirements.txt ./
+
+
+COPY ./requirements.txt ./app/
 RUN pip install -r requirements.txt
 COPY . .
 
+RUN chmod +x wait-for-it.sh
 RUN chmod +x docker-entrypoint.sh
 EXPOSE 80
