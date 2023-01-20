@@ -32,7 +32,8 @@ services:
     container_name: resume
 
 volumes:
-  mysql-data:
+  postgres_data:
+  static:
 
 networks:
   default:
