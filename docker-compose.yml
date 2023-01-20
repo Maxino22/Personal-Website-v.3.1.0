@@ -21,8 +21,7 @@ services:
     container_name: db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    ports:
-      - 5432:5432
+
   resume:
     build: ./my_cv
     container_name: resume
