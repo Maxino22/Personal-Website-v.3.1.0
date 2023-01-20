@@ -14,20 +14,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['api.maxino.xyz', 'localhost']
-CORS_ALLOW_ALL_ORIGINS = True
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Application definition
@@ -48,11 +35,6 @@ INSTALLED_APPS = [
 
 ]
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'maxino',
-    'API_KEY': '',
-    'API_SECRET': '',
-}
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -91,29 +73,6 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-# prod
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio',
-        'USER': 'max',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '3306',
-
-    }
-}
-
-
-# dev
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 ADMINS = [
     ('Maxino', os.environ.get('ADMIN_MAIL'))
 ]
@@ -126,16 +85,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 2525  # mail servers usually is 25
 # optionally
-DEFAULT_FROM_EMAIL = 'donotreply@instruct.com'
 
-
-# PROD
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'bob@gmail.com'
-# EMAIL_HOST_PASSWORD = 'Bobo223'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -175,6 +125,13 @@ USE_TZ = True
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
+}
 
 
 STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
