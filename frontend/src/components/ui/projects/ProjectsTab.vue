@@ -16,7 +16,9 @@
 			<div class="flex space-x-2 items-center mb-4">
 				<input
 					type="checkbox"
-					value=""
+					value="wordpress"
+					v-model="wordpress"
+					@change="WordpressActive"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
 				<iconWordpress />
@@ -30,6 +32,7 @@
 				<input
 					type="checkbox"
 					value=""
+					v-model="django"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
 				<iconDjango />
@@ -43,6 +46,7 @@
 				<input
 					type="checkbox"
 					value=""
+					v-model="vue"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
 				<iconVue />
@@ -56,13 +60,18 @@
 				<input
 					type="checkbox"
 					value=""
+					v-model="flask"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
-				<iconPython />
+				<img
+					class="w-6 h-6"
+					src="../../../assets/tech-stacks/flask.png"
+					alt=""
+				/>
 				<label
 					for="default-checkbox"
 					class="ml-2 text-body font-medium text-gray-900 dark:text-gray-300"
-					>Python</label
+					>Flask</label
 				>
 			</div>
 		</div>
@@ -88,4 +97,9 @@ const classObject = computed(() => ({
 const arrowClick = computed(() => ({
 	'-rotate-180': active.value,
 }))
+
+const Wordpress = ref(true)
+const django = ref(true)
+const flask = ref(true)
+const vue = ref(true)
 </script>
