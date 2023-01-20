@@ -12,7 +12,7 @@ python manage.py migrate
 # Start server
 echo "Starting server"
 # prod
-gunicorn Instruct.wsgi:application --bind 0.0.0.0:82
+gunicorn portfolio.wsgi:application --bind 0.0.0.0:82
 
 # # dev
 # python manage.py runserver 0.0.0.0:8080
