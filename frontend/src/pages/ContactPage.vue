@@ -1,20 +1,17 @@
 <template>
-	<div
-		class="grid grid-col-1 mx-auto pb-10 md:min-h-screen md:grid-cols-3 xl:grid-cols-5"
-	>
+	<div class="grid grid-cols-1 mx-auto md:min-h-screen md:grid-cols-5">
 		<div
-			class="md:pr-12 flex flex-col w-full justify-start md:border-r border-lines"
+			class="flex flex-col md:flex-row justify-start w-full md:border-r border-lines"
 		>
-			<p
-				class="pt-6 px-6 outline-none group divide-y divide-lines text-white body-text md:hidden"
-			>
-				_contact-me
+			<p class="pt-6 px-6 outline-none group text-white body-text md:hidden">
+				_about_me
 			</p>
-			<div class="flex flex-col">
+			<div class="flex-1 flex flex-col">
 				<ContactTab />
 			</div>
 		</div>
-		<div class="col-span-2 md:border-r border-lines">
+
+		<div class="col-span-2 md:border-r border-lines mt-10 md:mt-0">
 			<contactSubmitted v-if="contactStore.messageRecieved" />
 			<ContactForm v-else />
 		</div>

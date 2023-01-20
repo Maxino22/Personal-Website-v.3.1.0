@@ -14,7 +14,7 @@
 				/>
 			</div>
 		</div>
-		<div class="col-span-2 md:border-r border-lines">
+		<div class="col-span-2 md:border-r border-lines mt-10 md:mt-0">
 			<p
 				class="text-secondaryLightBlue border-b border-r w-full pl-5 border-lines py-[6px]"
 			>
