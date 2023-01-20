@@ -2,7 +2,7 @@
 	<div class="flex md:py-28 justify-center mx-10">
 		<form
 			@submit.prevent="submitForm"
-			class="flex flex-col space-y-8 w-full md:w-96"
+			class="flex relative flex-col space-y-8 w-full md:w-96"
 		>
 			<div>
 				<label
@@ -48,6 +48,7 @@
 					required
 				></textarea>
 			</div>
+			<BasePreloader v-if="contactStore.preloader" />
 			<button
 				type="submit"
 				class="text-white bg-secondaryLightBlue hover:bg-accentOrange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-1/2 sm:w-auto px-5 py-2.5 text-center outline-none"
@@ -60,6 +61,7 @@
 
 <script setup>
 import useContactStore from '../../../store/ContactStore'
+import BasePreloader from '../BasePreloader.vue'
 
 const contactStore = useContactStore()
 

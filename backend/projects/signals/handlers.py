@@ -1,5 +1,6 @@
 from django.db.models.signals import post_save
 from templated_mail.mail import BaseEmailMessage
+from django.core.mail import BadHeaderError
 from django.dispatch import receiver
 from projects.models import Contact
 
@@ -9,7 +10,7 @@ def send_email_to_notify_new_mail(sender, created, instance, **kwargs):
     if created:
         try:
             message = BaseEmailMessage(
-                template_name='emails/clients.html',
+                template_name='guest.html',
                 context={
                     'name': instance.name
                 }
@@ -17,7 +18,7 @@ def send_email_to_notify_new_mail(sender, created, instance, **kwargs):
             message.send([instance.email])
 
             admin_message = BaseEmailMessage(
-                template_name='emails/admins.html',
+                template_name='me.html',
                 context={
                     'name': instance.name,
                     'email': instance.email,

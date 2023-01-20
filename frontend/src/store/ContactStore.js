@@ -9,6 +9,7 @@ const useContactStore = defineStore('ContactStore', {
 			message: '',
 			date: '',
 			messageRecieved: false,
+			preloaderStatus: false,
 		}
 	},
 	getters: {
@@ -27,9 +28,13 @@ const useContactStore = defineStore('ContactStore', {
 		messageTime() {
 			return this.date
 		},
+		preloader() {
+			return this.preloaderStatus
+		},
 	},
 	actions: {
 		async submitForm() {
+			this.preloaderStatus = true
 			try {
 				await axios.post('http://localhost:8000/contacts/', {
 					name: this.name,
@@ -39,6 +44,7 @@ const useContactStore = defineStore('ContactStore', {
 				this.name = ''
 				this.email = ''
 				this.message = ''
+				this.preloaderStatus = false
 				this.messageRecieved = true
 			} catch (error) {
 				console.log(error)
