@@ -38,5 +38,3 @@ import useContactStore from '../store/ContactStore'
 
 const contactStore = useContactStore()
 </script>
-
-<style lang="scss" scoped></style>
