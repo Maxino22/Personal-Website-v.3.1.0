@@ -16,8 +16,7 @@ class Project(models.Model):
     project_url = models.URLField(max_length=200)
     github_url = models.URLField(max_length=200, null=True, blank=True)
     project_image = models.ImageField(upload_to='projects')
-    category = models.ForeignKey(
-        Categories, on_delete=models.PROTECT, related_name='project')
+    categories = models.ManyToManyField(Categories, related_name='projects')
 
     def __str__(self):
         return self.title

@@ -115,7 +115,7 @@ DATABASES = {
 }
 
 ADMINS = [
-    ('Maxino' , os.environ.get('ADMIN_MAIL'))
+    ('Maxino', os.environ.get('ADMIN_MAIL'))
 ]
 
 
@@ -129,14 +129,13 @@ EMAIL_PORT = 2525  # mail servers usually is 25
 DEFAULT_FROM_EMAIL = 'donotreply@instruct.com'
 
 
-
 # PROD
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'bob@gmail.com'
-EMAIL_HOST_PASSWORD = 'Bobo223'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'bob@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Bobo223'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
