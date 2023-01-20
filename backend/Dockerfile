@@ -1,5 +1,6 @@
 # Use the official Alpine Linux image as the base image
-FROM python:3.12-alpine
+FROM python:3.11.0a3-alpine3.15
+
 
 # Set the working directory
 WORKDIR /usr/src/app
