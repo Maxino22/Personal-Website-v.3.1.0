@@ -1,12 +1,9 @@
 #!/bin/sh
 
 #upgrade pip
-# installing postgres and pillow dev
-echo "installing mysql dependancies & pillow dependancies"
-apk update && apk add mariadb-connector-c-dev libffi-dev gcc python3-dev musl-dev  jpeg-dev zlib-dev
-
 echo "upgrading pip"
 pip install --upgrade pip
 
-echo "installing pipenv"
-pip install pipenv
+# installing postgres and pillow dev
+echo "installing postgres dev"
+apk update && apk add postgresql-dev gcc python3-dev musl-dev  jpeg-dev zlib-dev

@@ -17,14 +17,16 @@ services:
       - ./.env
 
     depends_on:
-      - mysql
-  mysql:
-    image: mysql:8.0
+      - db
+  db:
+    image: postgres:13.0-alpine
     env_file:
       - ./.env
-    container_name: mysql
+    container_name: db
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
   resume:
     build: ./my_cv
     container_name: resume

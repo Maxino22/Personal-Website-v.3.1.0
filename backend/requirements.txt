@@ -25,10 +25,10 @@ kiwisolver==1.4.4
 lxml==4.9.2
 MarkupSafe==2.1.2
 mock==5.0.1
-mysqlclient==2.1.1
 packaging==23.0
 Pillow==9.3.0
 premailer==3.10.0
+psycopg2==2.9.5
 pyparsing==3.0.9
 pyrsistent==0.19.3
 python-dateutil==2.8.2
