@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hw44#=k^p2axy$w!r1)@$a2hho$sm5*)&ldtz$tm&ulzz80@es'
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -50,8 +50,8 @@ INSTALLED_APPS = [
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'maxino',
-    'API_KEY': '376936487283534',
-    'API_SECRET': 'VGJ6orHXbRUip-fqjhk6u6mNuUE',
+    'API_KEY': '',
+    'API_SECRET': '',
 }
 
 MIDDLEWARE = [
@@ -90,6 +90,8 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+# prod
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -102,6 +104,39 @@ DATABASES = {
     }
 }
 
+
+# dev
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+ADMINS = [
+    ('Maxino' , os.environ.get('ADMIN_MAIL'))
+]
+
+
+# DEV
+# SMTP
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 2525  # mail servers usually is 25
+# optionally
+DEFAULT_FROM_EMAIL = 'donotreply@instruct.com'
+
+
+
+# PROD
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'bob@gmail.com'
+EMAIL_HOST_PASSWORD = 'Bobo223'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
