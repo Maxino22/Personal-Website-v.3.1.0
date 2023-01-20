@@ -30,3 +30,8 @@ services:
 
 volumes:
   mysql-data:
+
+networks:
+  default:
+    external:
+      name: docker_host
