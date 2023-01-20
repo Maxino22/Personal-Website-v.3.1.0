@@ -24,5 +24,9 @@ services:
     container_name: mysql
     volumes:
       - mysql-data:/var/lib/mysql
+  resume:
+    build: ./my_cv
+    container_name: resume
+
 volumes:
   mysql-data:
