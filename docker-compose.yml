@@ -13,14 +13,14 @@ services:
       dockerfile: backend/Dockerfile
     container_name: backend
     env_file:
-      - /.env
+      - ./.env
 
     depends_on:
       - mysql
   mysql:
     image: mysql:8.0
     env_file:
-      - /.env
+      - ./.env
     container_name: mysql
     volumes:
       - mysql-data:/var/lib/mysql
