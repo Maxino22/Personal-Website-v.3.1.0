@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import axios from 'axios'
 
 const useContactStore = defineStore('ContactStore', {
 	state() {
@@ -28,11 +29,20 @@ const useContactStore = defineStore('ContactStore', {
 		},
 	},
 	actions: {
-		submitForm() {
-			this.name = ''
-			this.email = ''
-			this.message = ''
-			this.messageRecieved = true
+		async submitForm() {
+			try {
+				await axios.post('http://localhost:8000/contacts/', {
+					name: this.name,
+					email: this.email,
+					message: this.message,
+				})
+				this.name = ''
+				this.email = ''
+				this.message = ''
+				this.messageRecieved = true
+			} catch (error) {
+				console.log(error)
+			}
 		},
 		setDate(formDate) {
 			this.date = formDate
