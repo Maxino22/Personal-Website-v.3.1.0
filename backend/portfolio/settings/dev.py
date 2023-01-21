@@ -7,13 +7,3 @@ SECRET_KEY = 'not_secret'
 CORS_ALLOW_ALL_ORIGINS = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-
-# dev
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}

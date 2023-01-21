@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "waiting for database"
-./app/wait-for-it db:5432
+
+
 # Collect static files
 echo "Collect static files"
 python manage.py collectstatic --noinput
@@ -12,7 +12,5 @@ python manage.py migrate
 # Start server
 echo "Starting server"
 # prod
-gunicorn portfolio.wsgi:application --bind 0.0.0.0:82
+gunicorn portfolio.wsgi:application --bind 0.0.0.0:80
 
-# # dev
-# python manage.py runserver 0.0.0.0:8080
