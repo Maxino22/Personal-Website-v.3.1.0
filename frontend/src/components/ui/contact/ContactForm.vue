@@ -51,7 +51,7 @@
 			<BasePreloader v-if="contactStore.preloader" />
 			<button
 				type="submit"
-				class="text-white pb:12 md:pb-0 bg-secondaryLightBlue hover:bg-accentOrange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-1/2 sm:w-auto px-5 py-2.5 text-center outline-none"
+				class="text-white mb:12 md:mb-0 bg-secondaryLightBlue hover:bg-accentOrange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-1/2 sm:w-auto px-5 py-2.5 text-center outline-none"
 			>
 				submit-message
 			</button>
