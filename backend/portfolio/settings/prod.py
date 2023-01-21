@@ -15,7 +15,7 @@ CORS_ALLOWED_ORIGINS = [
 
 
 # PROD
-EMAIL_BACKEND = os.environ.get('SECRET_KEY')
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_USE_TLS = True
