@@ -5,6 +5,7 @@ import os
 DEBUG = False
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+
 ALLOWED_HOSTS = ['api.maxino.xyz', 'localhost']
 # CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
