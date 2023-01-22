@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Categories, Contact
+from .models import Project, Category, Contact
 
 
 # Register your models here.
@@ -8,7 +8,7 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ['title']
 
 
-@admin.register(Categories)
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name']
 

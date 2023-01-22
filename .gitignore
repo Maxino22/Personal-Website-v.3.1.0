@@ -23,7 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-__pycache__
+backend/__pycache__
 .env
 backend/staticfiles
 db.sqlite3
+dev.py

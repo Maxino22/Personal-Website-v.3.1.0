@@ -36,7 +36,7 @@ const useContactStore = defineStore('ContactStore', {
 		async submitForm() {
 			this.preloaderStatus = true
 			try {
-				await axios.post('https://api.maxino.xyz/contacts/', {
+				await axios.post('/contacts', {
 					name: this.name,
 					email: this.email,
 					message: this.message,

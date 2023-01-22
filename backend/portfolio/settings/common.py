@@ -127,13 +127,6 @@ import cloudinary.uploader
 import cloudinary.api
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUD_NAME'),
-    'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET': os.environ.get('API_SECRET'),
-}
-
-
 STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 STATIC_URL = 'static/'
 

@@ -39,7 +39,22 @@
 import ProjectsTab from '../components/ui/projects/ProjectsTab.vue'
 import ProjectCard from '../components/ui/projects/ProjectCard.vue'
 import useProjectStore from '../store/ProjectStore'
-import { ref } from 'vue'
+import { onMounted, computed } from 'vue'
 
-const projects = useProjectStore().projectsGetter
+const store = useProjectStore()
+
+const projects = store.setProjects
+// const loading = store.loading
+
+// filter logic for projects
+// const filteredProjects = computed(()=>{
+// 	return projects.filter((project) =>{
+
+// 	})
+
+// })
+
+onMounted(() => {
+	store.projectAction()
+})
 </script>

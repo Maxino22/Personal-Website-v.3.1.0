@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class Categories(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -16,7 +16,7 @@ class Project(models.Model):
     project_url = models.URLField(max_length=200)
     github_url = models.URLField(max_length=200, null=True, blank=True)
     project_image = models.ImageField(upload_to='projects')
-    categories = models.ManyToManyField(Categories, related_name='projects')
+    categories = models.ManyToManyField(Category, related_name='projects')
 
     def __str__(self):
         return self.title

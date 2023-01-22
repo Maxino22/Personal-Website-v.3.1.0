@@ -1,5 +1,5 @@
 <template>
-	<div class="flex flex-col">
+	<div class="flex flex-col space-y-5">
 		<!-- card top title -->
 		<div class="flex space-x-2 items-center">
 			<p class="text-body text-secondaryPurple">
@@ -12,10 +12,14 @@
 		</div>
 		<!-- card -->
 		<div
-			class="relative w-full border border-lines rounded-lg shadow-md bg-primaryBlue"
+			class="relative w-full h-full border border-lines rounded-lg shadow-md bg-primaryBlue"
 		>
 			<a :href="projectUrl">
-				<img class="rounded-t-lg" :src="projectImage" alt="" />
+				<img
+					class="rounded-t-lg w-full object-contain"
+					:src="projectImage"
+					alt=""
+				/>
 			</a>
 			<div class="p-5">
 				<p class="mb-3 text-body text-secondaryLightBlue">

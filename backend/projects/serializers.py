@@ -1,19 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Project, Categories, Contact
-
-
-class CategorySerializer(ModelSerializer):
-    class Meta:
-        model = Categories
-        fields = ['name']
+from .models import Project, Category, Contact
+from rest_framework import serializers
 
 
 class ProjectSerializer(ModelSerializer):
-    category = CategorySerializer()
+    categories = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Project
-        fields = ['id', 'title', 'description', 'category', 'project_url',
+        fields = ['id', 'title', 'description', 'categories', 'project_url',
                   'github_url', 'project_image']
 
 
