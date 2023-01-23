@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex flex-col justify-start md:flex-row md:space-x-24 h-screen px-12"
+		class="flex flex-col justify-start md:flex-row md:space-x-24 max-h-screen px-12"
 	>
 		<div class="flex flex-col space-y-4 mt-40">
 			<h6 class="sub-head text-white">Hi all. I am</h6>
