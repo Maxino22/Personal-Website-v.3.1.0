@@ -7,7 +7,12 @@
 				_projects
 			</p>
 			<div class="flex flex-col w-full">
-				<ProjectsTab />
+				<ProjectsTab
+					:django="checkBoxes.django"
+					:flask="checkBoxes.flask"
+					:wordpress="checkBoxes.wordpress"
+					:vue="checkBoxes.vue"
+				/>
 			</div>
 		</div>
 		<div class="md:col-span-4 py-3">
@@ -39,11 +44,18 @@
 import ProjectsTab from '../components/ui/projects/ProjectsTab.vue'
 import ProjectCard from '../components/ui/projects/ProjectCard.vue'
 import useProjectStore from '../store/ProjectStore'
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, ref } from 'vue'
 
 const store = useProjectStore()
 
 const projects = store.setProjects
+
+const checkBoxes = ref({
+	django: true,
+	flask: true,
+	vue: true,
+	wordpress: true,
+})
 // const loading = store.loading
 
 // filter logic for projects

@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="hidden xl:block relative w-[50%] bg-secondaryGreen rounded-lg shadow-lg shadow-accentGreen border h-[60%] my-12 border-lines"
+		class="hidden xl:block relative w-[50%] bg-secondaryGreen rounded-lg shadow-lg shadow-accentGreen border h-[70%] my-12 border-lines"
 	>
 		<snake-game-screw></snake-game-screw>
 		<div class="grid grid-cols-5 gap-4 space-x-4 p-10">

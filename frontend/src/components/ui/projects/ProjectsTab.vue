@@ -16,9 +16,7 @@
 			<div class="flex space-x-2 items-center mb-4">
 				<input
 					type="checkbox"
-					value="wordpress"
-					v-model="wordpress"
-					@change="WordpressActive"
+					:value="wordpress"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
 				<iconWordpress />
@@ -31,9 +29,9 @@
 			<div class="flex space-x-2 items-center mb-4">
 				<input
 					type="checkbox"
-					value=""
-					v-model="django"
+					:value="django"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
+					checked
 				/>
 				<iconDjango />
 				<label
@@ -45,8 +43,7 @@
 			<div class="flex space-x-2 items-center mb-4">
 				<input
 					type="checkbox"
-					value=""
-					v-model="vue"
+					:value="vue"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
 				<iconVue />
@@ -59,8 +56,7 @@
 			<div class="flex space-x-2 items-center mb-4">
 				<input
 					type="checkbox"
-					value=""
-					v-model="flask"
+					:value="flask"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
 				/>
 				<img
@@ -85,7 +81,6 @@ import iconUpArrow from '../../icons/iconUpArrow.vue'
 import iconWordpress from '../../icons/iconWordpress.vue'
 import iconVue from '../../icons/iconVue.vue'
 import iconDjango from '../../icons/iconDjango.vue'
-import iconPython from '../../icons/iconPython.vue'
 const active = ref(false)
 function openAccordion() {
 	active.value = !active.value
@@ -98,8 +93,10 @@ const arrowClick = computed(() => ({
 	'-rotate-180': active.value,
 }))
 
-const Wordpress = ref(true)
-const django = ref(true)
-const flask = ref(true)
-const vue = ref(true)
+const props = defineProps({
+	wordpress: Boolean,
+	django: Boolean,
+	flask: Boolean,
+	vue: Boolean,
+})
 </script>
