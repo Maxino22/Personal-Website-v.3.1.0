@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="container bg-primaryBlue border border-lines mx-auto rounded-lg overflow-x-hidden my-6"
+		class="container bg-primaryBlue border border-lines mx-auto rounded-lg overflow-x-hidden"
 	>
 		<the-header @open-mobile-menu="DisplayMobileMenu"></the-header>
 		<the-mobile-menu v-if="showMobileMenu"></the-mobile-menu>

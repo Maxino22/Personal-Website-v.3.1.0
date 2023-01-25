@@ -15,9 +15,11 @@
 		<div class="flex flex-col items-start pl-8 mt-5" v-if="active">
 			<div class="flex space-x-2 items-center mb-4">
 				<input
+					@click="changeValue('wordpress')"
 					type="checkbox"
 					:value="wordpress"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
+					:checked="wordpress"
 				/>
 				<iconWordpress />
 				<label
@@ -28,10 +30,11 @@
 			</div>
 			<div class="flex space-x-2 items-center mb-4">
 				<input
+					@click="changeValue('django')"
 					type="checkbox"
 					:value="django"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
-					checked
+					:checked="django"
 				/>
 				<iconDjango />
 				<label
@@ -42,9 +45,11 @@
 			</div>
 			<div class="flex space-x-2 items-center mb-4">
 				<input
+					@click="changeValue('vue')"
 					type="checkbox"
 					:value="vue"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
+					:checked="vue"
 				/>
 				<iconVue />
 				<label
@@ -55,9 +60,11 @@
 			</div>
 			<div class="flex space-x-2 items-center mb-4">
 				<input
+					@click="changeValue('flask')"
 					type="checkbox"
 					:value="flask"
 					class="w-4 h-4 text-secondaryLightBlue accent-secondaryLightBlue bg-primaryBlue rounded focus:ring-secondaryLightBlue"
+					:checked="flask"
 				/>
 				<img
 					class="w-6 h-6"
@@ -86,6 +93,8 @@ function openAccordion() {
 	active.value = !active.value
 }
 
+const emit = defineEmits(['changeActiveBox'])
+
 const classObject = computed(() => ({
 	'text-white': active.value,
 }))
@@ -99,4 +108,8 @@ const props = defineProps({
 	flask: Boolean,
 	vue: Boolean,
 })
+
+function changeValue(value) {
+	emit('changeActiveBox', value)
+}
 </script>

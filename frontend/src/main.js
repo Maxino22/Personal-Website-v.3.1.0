@@ -18,8 +18,10 @@ app.use(
 	VueGtag,
 	{
 		config: { id: 'G-YEJ6WYZZ47' },
+		appName: 'Portfolio',
 		pageTrackerScreenviewEnabled: true,
 	},
+
 	router
 )
 

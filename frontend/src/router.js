@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
 	{
 		path: '/',
+		name: 'home',
 		meta: {
 			title: 'Maxwell Muhanda | Portfolio Website',
 		},
@@ -10,6 +11,7 @@ const routes = [
 	},
 	{
 		path: '/about-me',
+		name: 'About ME',
 		component: () => import('./pages/AboutPage.vue'),
 		meta: {
 			title: 'Maxwell Muhanda | About Me',
@@ -17,6 +19,7 @@ const routes = [
 	},
 	{
 		path: '/projects',
+		name: 'Projects',
 		component: () => import('./pages/ProjectsPage.vue'),
 		meta: {
 			title: 'Maxwell Muhanda | Projects',
@@ -24,6 +27,7 @@ const routes = [
 	},
 	{
 		path: '/contact-me',
+		name: 'Contact Page',
 		component: () => import('./pages/ContactPage.vue'),
 		meta: {
 			title: 'Maxwell Muhanda | Contact Me',
