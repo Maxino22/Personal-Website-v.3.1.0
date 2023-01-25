@@ -14,7 +14,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://maxino.xyz', ]
+CSRF_TRUSTED_ORIGINS = ['https://api.maxino.xyz', ]
 
 # PROD
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
