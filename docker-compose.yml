@@ -16,10 +16,6 @@ services:
     build: ./my_cv
     container_name: resume
 
-volumes:
-  postgres_data:
-  static:
-
 networks:
   default:
     external:
