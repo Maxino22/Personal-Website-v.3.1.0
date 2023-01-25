@@ -10,7 +10,7 @@ import VueGtag from 'vue-gtag'
 const app = createApp(App)
 
 app.component('base-card', BaseCard)
-axios.defaults.baseURL = 'http://localhost:8000/'
+axios.defaults.baseURL = 'https://api.maxino.xyz'
 
 app.use(router)
 app.use(pinia)
