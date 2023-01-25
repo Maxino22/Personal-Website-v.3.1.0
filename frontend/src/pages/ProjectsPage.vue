@@ -25,7 +25,7 @@
 			<div
 				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 items-center md:mt-24 mx-16"
 			>
-				<div v-for="project in projects">
+				<div v-for="project in filteredProjects">
 					<ProjectCard
 						:key="project.id"
 						:project-id="project.id"
@@ -45,17 +45,16 @@
 import ProjectsTab from '../components/ui/projects/ProjectsTab.vue'
 import ProjectCard from '../components/ui/projects/ProjectCard.vue'
 import useProjectStore from '../store/ProjectStore'
-import { onMounted, computed, ref } from 'vue'
+import { onBeforeMount, computed, ref } from 'vue'
 
 const store = useProjectStore()
-
-const projects = store.setProjects
 
 const checkBoxes = ref({
 	django: true,
 	flask: true,
 	vue: true,
 	wordpress: true,
+	tailwindcss: true,
 })
 
 function toggleCheckbox(value) {
@@ -75,14 +74,34 @@ function toggleCheckbox(value) {
 // const loading = store.loading
 
 // // filter logic for projects
-// const filteredProjects = computed(()=>{
-// 	return projects.filter((project) =>{
+const filteredProjects = computed(() => {
+	const projects = store.setProjects
+	return projects.filter((project) => {
+		if (checkBoxes.value.django && project.categories.includes('Django')) {
+			return true
+		}
+		if (checkBoxes.value.vue && project.categories.includes('Vue')) {
+			return true
+		}
+		if (checkBoxes.value.flask && project.categories.includes('Flask')) {
+			return true
+		}
+		if (
+			checkBoxes.value.wordpress &&
+			project.categories.includes('Wordpress')
+		) {
+			return true
+		}
+		if (
+			checkBoxes.value.tailwindcss &&
+			project.categories.includes('tailwindcss')
+		) {
+			return true
+		}
+	})
+})
 
-// 	})
-
-// })
-
-onMounted(() => {
+onBeforeMount(() => {
 	store.projectAction()
 })
 </script>

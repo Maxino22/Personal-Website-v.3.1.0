@@ -23,7 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-backend/__pycache__
+# backend/projects/__pycache__
+*.pyc
+*.pyo
 .env
 backend/staticfiles
 db.sqlite3

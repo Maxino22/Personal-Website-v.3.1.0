@@ -2,7 +2,7 @@
 	<div class="text-center">
 		<canvas
 			ref="gameBoard"
-			height="550"
+			height="600"
 			width="400"
 			class="w-full border rounded-lg border-black"
 		>
