@@ -59,16 +59,16 @@ const checkBoxes = ref({
 
 function toggleCheckbox(value) {
 	if (value === 'django') {
-		checkBoxes.value.django != checkBoxes.value.django
+		checkBoxes.value.django = !checkBoxes.value.django
 	}
-	if (value === 'flask') {
-		checkBoxes.value.flask != checkBoxes.value.flask
+	if (value === 'wordpress') {
+		checkBoxes.value.wordpress = !checkBoxes.value.wordpress
 	}
 	if (value === 'vue') {
-		checkBoxes.value.vue != checkBoxes.value.vue
+		checkBoxes.value.vue = !checkBoxes.value.vue
 	}
 	if (value === 'flask') {
-		checkBoxes.value.flask != checkBoxes.value.flask
+		checkBoxes.value.flask = !checkBoxes.value.flask
 	}
 }
 // const loading = store.loading
