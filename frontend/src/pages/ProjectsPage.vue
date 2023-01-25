@@ -8,6 +8,7 @@
 			</p>
 			<div class="flex flex-col w-full">
 				<ProjectsTab
+					@change-active-box="toggleCheckbox"
 					:django="checkBoxes.django"
 					:flask="checkBoxes.flask"
 					:wordpress="checkBoxes.wordpress"
@@ -56,9 +57,24 @@ const checkBoxes = ref({
 	vue: true,
 	wordpress: true,
 })
+
+function toggleCheckbox(value) {
+	if (value === 'django') {
+		checkBoxes.value.django != checkBoxes.value.django
+	}
+	if (value === 'flask') {
+		checkBoxes.value.flask != checkBoxes.value.flask
+	}
+	if (value === 'vue') {
+		checkBoxes.value.vue != checkBoxes.value.vue
+	}
+	if (value === 'flask') {
+		checkBoxes.value.flask != checkBoxes.value.flask
+	}
+}
 // const loading = store.loading
 
-// filter logic for projects
+// // filter logic for projects
 // const filteredProjects = computed(()=>{
 // 	return projects.filter((project) =>{
 
