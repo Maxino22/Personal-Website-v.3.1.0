@@ -11,11 +11,15 @@ services:
     container_name: backend
     env_file:
       - ./.env
+    volumes:
+      - ./backend:/app/backend
 
   resume:
     build: ./my_cv
     container_name: resume
 
+volumes:
+  db-data:
 networks:
   default:
     external:
