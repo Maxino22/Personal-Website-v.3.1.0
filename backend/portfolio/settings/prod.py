@@ -31,3 +31,19 @@ CLOUDINARY_STORAGE = {
     'API_KEY': os.environ.get('API_KEY'),
     'API_SECRET': os.environ.get('API_SECRET'),
 }
+
+
+# Prod DB
+DATABASES = {
+    'default': {
+        'ENGINE': os.environ.get('CLOUD_NAME'),
+
+        "CLIENT": {
+            "name": os.environ.get('DB_ENGINE'),
+            "host": os.environ.get('DB_HOST'),
+            "username": os.environ.get('DB_USERNAME'),
+            "password": os.environ.get('DB_PASSWORD'),
+            "authMechanism": os.environ.get('DB_AUTH'),
+        }
+    }
+}
