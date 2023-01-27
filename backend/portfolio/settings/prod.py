@@ -38,10 +38,10 @@ username = os.environb.get('DB_USERNAME')
 # Prod DB
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('CLOUD_NAME'),
+        'ENGINE': os.environ.get('DB_ENGINE'),
 
         "CLIENT": {
-            "name": os.environ.get('DB_ENGINE'),
+            "name": os.environ.get('DB_NAME'),
             "host": f"mongodb+srv://{username}:{Password}@cluster0.ejlhnue.mongodb.net/?retryWrites=true&w=majority",
             "username": os.environ.get('DB_USERNAME'),
             "password": os.environ.get('DB_PASSWORD'),
