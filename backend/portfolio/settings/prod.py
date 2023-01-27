@@ -33,7 +33,7 @@ CLOUDINARY_STORAGE = {
 }
 
 Password = os.environ.get('DB_PASSWORD')
-username = os.environb.get('DB_USERNAME')
+username = os.environ.get('DB_USERNAME')
 
 # Prod DB
 DATABASES = {
