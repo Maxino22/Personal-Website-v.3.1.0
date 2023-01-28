@@ -16,7 +16,7 @@
 		>
 			<a :href="projectUrl">
 				<img
-					class="rounded-t-lg w-full object-contain"
+					class="rounded-t-lg w-full object-cover h-44"
 					:src="projectImage"
 					alt=""
 				/>
