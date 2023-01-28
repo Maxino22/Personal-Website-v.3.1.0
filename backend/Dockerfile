@@ -5,7 +5,7 @@ WORKDIR /app
 # sh# app dependancies
 # application server dependancies
 RUN apk update \
-     && apk add libffi-dev gcc python3-dev musl-dev  jpeg-dev zlib-dev mysql-client
+     && apk add libffi-dev gcc python3-dev musl-dev  jpeg-dev zlib-dev mysql-client mariadb-dev
 RUN pip install --upgrade pip 
 
 COPY  requirements.txt .
