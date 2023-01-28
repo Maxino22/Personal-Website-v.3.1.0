@@ -32,20 +32,15 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('API_SECRET'),
 }
 
-Password = os.environ.get('DB_PASSWORD')
-username = os.environ.get('DB_USERNAME')
 
 # Prod DB
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_ENGINE'),
-
-        "CLIENT": {
-            "name": os.environ.get('DB_NAME'),
-            "host": f"mongodb+srv://{username}:{Password}@cluster0.ejlhnue.mongodb.net/?retryWrites=true&w=majority",
-            "username": os.environ.get('DB_USERNAME'),
-            "password": os.environ.get('DB_PASSWORD'),
-            "authMechanism": os.environ.get('DB_AUTH'),
-        }
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USERNAME'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': '3306',
     }
 }

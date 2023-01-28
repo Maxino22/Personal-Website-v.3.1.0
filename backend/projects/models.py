@@ -1,6 +1,4 @@
-from djongo import models
-
-# Create your models here.
+from django.db import models
 
 
 class Category(models.Model):
@@ -26,7 +24,7 @@ class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=60)
     message = models.TextField()
-    message_time = models.DateTimeField(auto_now=True)
+    message_time = models.DateTimeField(auto_now=True, null=True)
 
     def __str__(self):
         return self.name
