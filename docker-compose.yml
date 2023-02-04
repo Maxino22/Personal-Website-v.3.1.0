@@ -14,6 +14,19 @@ services:
     volumes:
       - ./backend:/app/backend
 
+  redis:
+    image: redis:6.2-alpine
+    ports:
+      - 6379:6379
+    restart: always
+    volumes:
+      - redisdata:/data
+  celery:
+    build: .
+    command: celery -A postfolio worker --loglevel=info
+    depends_on:
+      - .:/app
+
   resume:
     build: ./my_cv
     container_name: resume
