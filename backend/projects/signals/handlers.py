@@ -3,6 +3,7 @@ from templated_mail.mail import BaseEmailMessage
 from django.core.mail import BadHeaderError
 from django.dispatch import receiver
 from projects.models import Contact
+from celery import shared
 
 
 @receiver(post_save, sender=Contact)
