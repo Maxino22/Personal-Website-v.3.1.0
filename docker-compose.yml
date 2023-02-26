@@ -28,7 +28,8 @@ services:
 
 volumes:
   db-data:
+  redisdata:
 networks:
   default:
-    external:
-      name: npmAdmin
+    external: true
+    name: npmAdmin
