@@ -20,7 +20,7 @@ services:
     build: .
     command: celery -A postfolio worker --loglevel=info
     depends_on:
-      - .:/app
+      - backend
 
   resume:
     build: ./my_cv
