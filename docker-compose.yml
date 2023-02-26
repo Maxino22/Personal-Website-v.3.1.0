@@ -1,10 +1,5 @@
 version: '3'
 services:
-  frontend:
-    build: ./frontend
-    container_name: frontend
-    depends_on:
-      - backend
   backend:
     build: ./backend
     command: ./docker-entrypoint.sh
@@ -36,4 +31,4 @@ volumes:
 networks:
   default:
     external:
-      name: docker_host
+      name: npmAdmin
