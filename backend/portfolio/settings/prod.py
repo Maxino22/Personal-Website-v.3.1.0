@@ -9,11 +9,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 ALLOWED_HOSTS = ['api.maxino.xyz', 'localhost']
 # CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    'https://www.maxino.xyz',
-    'https://maxino.xyz',
     'http://localhost:5173',
 ]
-
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://\w+\.maxino\.xyz$",
+]
 CSRF_TRUSTED_ORIGINS = ['https://api.maxino.xyz']
 
 # PROD
