@@ -22,9 +22,9 @@ services:
 #     depends_on:
 #       - backend
 
-  resume:
-    build: ./my_cv
-    container_name: resume
+  #resume:
+   # build: ./my_cv
+    #container_name: resume
 
 volumes:
   db-data:
